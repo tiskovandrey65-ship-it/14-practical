@@ -1,0 +1,23 @@
+import random
+
+numbers = [[random.randint(1, 100) for j in range(4)] for i in range(3)]
+
+print("Список:")
+for row in numbers:
+    print(row)
+
+
+max_value = numbers[0][0]
+max_row = 0
+max_col = 0
+
+
+for i in range(len(numbers)):
+    for j in range(len(numbers[i])):
+        if numbers[i][j] > max_value:
+            max_value = numbers[i][j]
+            max_row = i
+            max_col = j
+
+print(f"\nМаксимум: {max_value}")
+print(f"Позиция: строка {max_row}, индекс {max_col}")
